@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule} from '@angular/material/select';
 import { MatInputModule} from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav'
 
 
 
@@ -28,7 +29,8 @@ import {MatIconModule} from '@angular/material/icon'
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule
   ],
   exports: [
     CommonModule,
@@ -41,7 +43,8 @@ import {MatIconModule} from '@angular/material/icon'
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatSidenavModule
   ]
 })
 export class MaterialModule { }

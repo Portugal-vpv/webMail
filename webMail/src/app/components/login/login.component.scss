@@ -4,8 +4,8 @@
   margin: auto;
  display: block;
  margin-top: 100px;
- display: block;
- text-align: center;
+text-align: center;
+
 }
 
 .example-form {
@@ -17,3 +17,19 @@
 mat-form-field {
   margin-right: 12px;
 }
+
+.wrapper {
+  position: flex;
+  justify-content: center;
+}
+
+.wrapper-2 {
+  position: flex;
+  justify-content: space-around;
+}
+
+button {
+  justify-content: space-around;
+}
+
+

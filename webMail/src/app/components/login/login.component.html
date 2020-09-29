@@ -1,29 +1,27 @@
-
 <mat-card class="example-card">
   <form class="example-form">
     <h1>Name of the email service</h1>
     <h2>Create your new Email service</h2>
     <h3>Go to email</h3>
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Type Your email"/>
-    </mat-form-field>
-
-    <table class="example-full-width" cellspacing="0">
-      <tr>
-        <td>
-          <mat-form-field class="example-full-width" appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput placeholder="Type Your Password"/>
-          </mat-form-field>
-        </td>
-      </tr>
-    </table>
-
-
-
-
-    <button mat-button color="primary">Create Account</button>
-    <button mat-raised-button color="primary">Confirm Password</button>
+    <div class="wrapper">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Type Your email" />
+      </mat-form-field>
+    </div>
+    <div class="wrapper">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Type Your Password" />
+      </mat-form-field>
+    </div>
+    <div class="wrapper-2">
+      <button mat-button color="primary" class="mat-button">
+        Create Account
+      </button>
+      <button mat-raised-button color="primary" class="mat-button">
+        Confirm Password
+      </button>
+    </div>
   </form>
 </mat-card>

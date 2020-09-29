@@ -1,3 +1,6 @@
+import { SideNavItensModule } from './components/side-nav-itens/side-nav-itens.module';
+import { SideNavBarModule } from './components/side-nav-bar/side-nav-bar.module';
+import { RegisterModule } from './components/register/register.module';
 import { MaterialModule } from './material/material.module';
 import { LoginModule } from './components/login/login.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,7 +8,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatCardModule} from '@angular/material/card';
@@ -15,15 +17,17 @@ import { FormsModule } from '@angular/forms';
 import { MatSelectModule} from '@angular/material/select';
 import { MatInputModule} from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { SideNavItensComponent } from './components/side-nav-itens/side-nav-itens.component';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,7 +41,12 @@ import {MatIconModule} from '@angular/material/icon'
     MatSelectModule,
     MatInputModule,
     MatMenuModule,
-    MatIconModule
+    MatIconModule,
+    RegisterModule,
+    SideNavBarModule,
+    SideNavItensModule
+
+
 
   ],
   providers: [],
