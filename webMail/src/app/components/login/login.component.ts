@@ -1,3 +1,4 @@
+import { User } from './../../../interfaces/userInterface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,8 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   viewPassword: boolean = false;
+  isUserLogged: boolean = false;
+  userMe: User;
   ngOnInit(): void {
   }
 
