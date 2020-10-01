@@ -9,6 +9,7 @@ export class LoginComponent implements OnInit {
 
   constructor() { }
 
+  viewPassword: boolean = false;
   ngOnInit(): void {
   }
 
