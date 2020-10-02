@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container"  >
   <mat-card class="example-card">
-    <form>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="wrapper-0">
         <h1>Gomiwara no Mail</h1>
         <h2>Create your new Email service</h2>
@@ -11,7 +11,10 @@
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Email</mat-label>
 
-            <input matInput placeholder="Type Your email" />
+            <input matInput placeholder="Type Your email" formControlName="email" />
+            <mat-error *ngIf="form.controls.email.hasError('email') && !form.controls.email.hasError('required')" >Invalid email input</mat-error>
+            <mat-error *ngIf="!form.controls.email.hasError('email') && form.controls.email.hasError('required')" >Email is required</mat-error>
+
             <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
               >mail_outline</mat-icon
             >
@@ -20,7 +23,9 @@
         <div class="wrapper">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Type Your Password" />
+            <input matInput type="password" placeholder="Type Your Password" formControlName="password"/>
+            <mat-error *ngIf="form.controls.password.hasError('minlength') && !form.controls.password.hasError('required')" >Password must have at least 8 digits</mat-error>
+            <mat-error *ngIf="!form.controls.password.hasError('email') && form.controls.password.hasError('required')" >Password is required</mat-error>
             <mat-icon
               *ngIf="!viewPassword"
               aria-hidden="false"
@@ -44,7 +49,7 @@
           <button mat-button color="primary" class="mat-button">
             Create Account
           </button>
-          <button mat-raised-button color="primary" class="mat-button">
+          <button mat-raised-button color="primary" class="mat-button" type="submit">
             Confirm Password
           </button>
         </div>

@@ -2,6 +2,7 @@ import { RegisterComponent } from './register.component';
 import { MaterialModule } from './../../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,9 @@ import { CommonModule } from '@angular/common';
   declarations: [RegisterComponent],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [RegisterComponent]
 })

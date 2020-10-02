@@ -1,17 +1,51 @@
+
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+}
+
 .example-card {
-  width: 40%;
-  margin: auto;
- display: block;
- margin-top: 100px;
- display: block;
- text-align: center;
+
+  width: 450px;
+  height: 500px;
+  align-self: center;
 }
 
-.example-form {
- display: inline-block;
- margin: auto;
+.wrapper-0 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.wrapper {
+display: flex;
+justify-content: center;
 }
 
+.wrapper-1 {
+display: flex;
+justify-content: center;
+}
+
+.wrapper-2 {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper-3 {
+  display: flex;
+  justify-content: space-around;
+}
 mat-form-field {
   margin-right: 12px;
 }
+
+.alignedInput {
+  width: 200px;
+}
+
+.singleInput {
+  width: 410px;
+}
+
