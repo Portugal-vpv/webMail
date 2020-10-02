@@ -36,6 +36,7 @@ justify-content: center;
 .wrapper-3 {
   display: flex;
   justify-content: space-around;
+  margin-top: 12px;
 }
 mat-form-field {
   margin-right: 12px;
@@ -49,3 +50,17 @@ mat-form-field {
   width: 410px;
 }
 
+.space {
+  margin-top: 12px;
+}
+
+.mat-card {
+
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+h1 {
+  color: rgb(14,77,146);
+  font-family: sans-serif;
+}

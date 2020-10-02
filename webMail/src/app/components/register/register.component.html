@@ -1,64 +1,141 @@
-<div class="container"><mat-card class="example-card">
-  <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()" >
-
-    <div class="wrapper-0">
-      <h1>Name of the email service</h1>
-      <h2>Create your new Email service</h2>
-      <h3>Go to email</h3>
-    </div>
-
-
-
-      <div class="wrapper">
-
-            <mat-form-field class="alignedInput" appearance="outline">
-              <mat-label>First name</mat-label>
-              <input matInput placeholder="Type Your First Name Here " formControlName="firstName" />
-              <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
-              >account_circle</mat-icon>
-            </mat-form-field>
-
-
-            <mat-form-field class="alignedInput" appearance="outline">
-              <mat-label>Last Name</mat-label>
-              <input matInput placeholder="Type Your Last Name Here" formControlName="lastName"/>
-              <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
-              >account_circle</mat-icon>
-            </mat-form-field>
+<div class="container">
+  <mat-card class="example-card">
+    <form class="example-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="wrapper-0">
+        <h1>Gomiwara no Mail</h1>
+        <h2>Create your new Email service</h2>
+        <h3>Go to email</h3>
       </div>
+      <div class="space">
+        <div class="wrapper">
+          <mat-form-field class="alignedInput" appearance="outline">
+            <mat-label>First name</mat-label>
+            <input
+              matInput
+              placeholder="Type Your First Name Here "
+              formControlName="firstName"
+            />
+            <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
+              >account_circle</mat-icon
+            >
+            <mat-error *ngIf="form.controls.firstName.hasError('required')"
+              >First name is required</mat-error
+            >
+          </mat-form-field>
 
-    <div class="wrapper-1">
-      <p>
-        <mat-form-field class="singleInput" appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput placeholder="Type Your Email" formControlName="email">
-          <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
-          >mail_outline</mat-icon>
+          <mat-form-field class="alignedInput" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input
+              matInput
+              placeholder="Type Your Last Name Here"
+              formControlName="lastName"
+            />
+            <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
+              >account_circle</mat-icon
+            >
+            <mat-error *ngIf="form.controls.lastName.hasError('required')"
+              >Last name is required</mat-error
+            >
+          </mat-form-field>
+        </div>
 
-        </mat-form-field>
-      </p>
-    </div>
+        <div class="wrapper-1">
+          <p>
+            <mat-form-field class="singleInput" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Type Your Email"
+                formControlName="email"
+              />
+              <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
+                >mail_outline</mat-icon
+              >
+              <mat-error
+                *ngIf="
+                  !form.controls.email.hasError('email') &&
+                  form.controls.email.hasError('required')
+                "
+                >Email is required</mat-error
+              >
+              <mat-error
+                *ngIf="
+                  form.controls.email.hasError('email') &&
+                  !form.controls.email.hasError('required')
+                "
+                >Invalid email</mat-error
+              >
+            </mat-form-field>
+          </p>
+        </div>
 
-    <div class="wrapper-2">
-      <mat-form-field class="alignedInput" appearance="outline">
-        <mat-label>Password</mat-label>
-        <input matInput placeholder="Type Your Password" formControlName="password" type="password"/>
-        <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
-              >visibility_off</mat-icon>
-      </mat-form-field>
+        <div class="wrapper-2">
+          <mat-form-field class="alignedInput" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Type Your Password"
+              formControlName="password"
+              [type]="hidePassword ? 'password' : 'text'"
+            />
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+            <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
+              > {{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon
+            >
+            </button>
+            <mat-error
+              *ngIf="
+                !form.controls.password.hasError('minlength') &&
+                form.controls.password.hasError('required')
+              "
+              >Password is required</mat-error
+            >
+            <mat-error
+              *ngIf="
+                form.controls.password.hasError('minlength') &&
+                !form.controls.password.hasError('required')
+              "
+              >Password must have at least 8 digits</mat-error
+            >
+          </mat-form-field>
 
-      <mat-form-field class="alignedInput" appearance="outline">
-        <mat-label>Confirm Password</mat-label>
-        <input matInput placeholder="Confirm Password" formControlname="confirmPassword" type="password"/>
-        <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
-              >visibility_off</mat-icon>
-      </mat-form-field>
-    </div>
+          <mat-form-field class="alignedInput" appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              placeholder="Confirm Password"
+              formControlName="confirmPassword"
+              [type]="hidePassword ? 'password' : 'text'"
 
-         <div class="wrapper-3">
+            />
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+              <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
+                > {{ hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon
+              >
+              </button>
+            <mat-error
+              *ngIf="
+                !form.controls.confirmPassword.hasError('minlength') &&
+                form.controls.confirmPassword.hasError('required')
+              "
+              >Please confirm password</mat-error
+            >
+            <mat-error
+              *ngIf="
+                form.controls.confirmPassword.hasError('minlength') &&
+                !form.controls.confirmPassword.hasError('required')
+              "
+              >Password must have at least 8 digits</mat-error
+            >
+          </mat-form-field>
+        </div>
+
+        <div class="wrapper-3">
           <button mat-button color="primary">Login Instead</button>
           <button mat-raised-button color="primary" type="submit">Confirm</button>
-         </div>
-  </form>
-</mat-card>
+        </div>
+      </div>
+
+    </form>
+  </mat-card>
 </div>

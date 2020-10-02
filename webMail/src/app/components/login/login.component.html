@@ -1,4 +1,4 @@
-<div class="container"  >
+<div class="container">
   <mat-card class="example-card">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="wrapper-0">
@@ -11,9 +11,25 @@
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Email</mat-label>
 
-            <input matInput placeholder="Type Your email" formControlName="email" />
-            <mat-error *ngIf="form.controls.email.hasError('email') && !form.controls.email.hasError('required')" >Invalid email input</mat-error>
-            <mat-error *ngIf="!form.controls.email.hasError('email') && form.controls.email.hasError('required')" >Email is required</mat-error>
+            <input
+              matInput
+              placeholder="Type Your email"
+              formControlName="email"
+            />
+            <mat-error
+              *ngIf="
+                form.controls.email.hasError('email') &&
+                !form.controls.email.hasError('required')
+              "
+              >Invalid email input</mat-error
+            >
+            <mat-error
+              *ngIf="
+                !form.controls.email.hasError('email') &&
+                form.controls.email.hasError('required')
+              "
+              >Email is required</mat-error
+            >
 
             <mat-icon aria-hidden="false" aria-label=" icon" matSuffix
               >mail_outline</mat-icon
@@ -23,33 +39,49 @@
         <div class="wrapper">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Type Your Password" formControlName="password"/>
-            <mat-error *ngIf="form.controls.password.hasError('minlength') && !form.controls.password.hasError('required')" >Password must have at least 8 digits</mat-error>
-            <mat-error *ngIf="!form.controls.password.hasError('email') && form.controls.password.hasError('required')" >Password is required</mat-error>
-            <mat-icon
-              *ngIf="!viewPassword"
-              aria-hidden="false"
-              aria-label=" icon"
-              matSuffix
-              (click)="(!viewPassword)"
-              >visibility_off</mat-icon
+            <input
+              matInput
+              [type]="hidePassword ? 'password' : 'text'"
+              placeholder="Type Your Password"
+              formControlName="password"
+            />
+            <mat-error
+              *ngIf="
+                form.controls.password.hasError('minlength') &&
+                !form.controls.password.hasError('required')
+              "
+              >Password must have at least 8 digits</mat-error>
+            <mat-error
+              *ngIf="
+                !form.controls.password.hasError('email') &&
+                form.controls.password.hasError('required')
+              "
+              >Password is required</mat-error
             >
-            <mat-icon
-              *ngIf="viewPassword"
-              aria-hidden="false"
-              aria-label=" icon"
+            <button
+              mat-icon-button
               matSuffix
-              (click)="(!viewPassword)"
-              >visibility</mat-icon
+              (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword"
             >
-          </mat-form-field>
+              <mat-icon aria-hidden="false" aria-label=" icon" matSuffix>
+                {{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon
+              >
+            </button>
 
+          </mat-form-field>
         </div>
         <div class="wrapper-2">
           <button mat-button color="primary" class="mat-button">
             Create Account
           </button>
-          <button mat-raised-button color="primary" class="mat-button" type="submit">
+          <button
+            mat-raised-button
+            color="primary"
+            class="mat-button"
+            type="submit"
+          >
             Confirm Password
           </button>
         </div>

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  viewPassword: boolean = false;
+  hidePassword: boolean = true;
   isUserLogged: boolean = false;
   userMe: User;
   userLogin: LoginInterface
