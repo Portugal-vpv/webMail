@@ -1,3 +1,4 @@
+import { AuthService } from './auth.service';
 import { LoginInterface } from './../../../interfaces/loginInterface';
 import { User } from './../../../interfaces/userInterface';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,8 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private authService: AuthService) { }
 
   form: FormGroup;
 
@@ -41,6 +43,10 @@ export class LoginComponent implements OnInit {
 
   resetForm() {
     this.form.reset();
+  }
+
+  login() {
+    this.authService.loginAuthentication(this.userLogin);
   }
 
 
