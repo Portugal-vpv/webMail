@@ -1,8 +1,8 @@
 import { SideNavItensModule } from './components/side-nav-itens/side-nav-itens.module';
 import { SideNavBarModule } from './components/side-nav-bar/side-nav-bar.module';
-import { RegisterModule } from './components/register/register.module';
+//import { RegisterModule } from './components/register/register.module';
 import { MaterialModule } from './material/material.module';
-import { LoginModule } from './components/login/login.module';
+//import { LoginModule } from './components/login/login.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -31,7 +31,7 @@ import { SideNavItensComponent } from './components/side-nav-itens/side-nav-iten
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule,
+    //LoginModule,
     BrowserAnimationsModule,
     MatSliderModule,
     MatCardModule,
@@ -42,7 +42,7 @@ import { SideNavItensComponent } from './components/side-nav-itens/side-nav-iten
     MatInputModule,
     MatMenuModule,
     MatIconModule,
-    RegisterModule,
+    //RegisterModule,
     SideNavBarModule,
     SideNavItensModule,
     ReactiveFormsModule,
