@@ -1,0 +1,18 @@
+<div class="wrapper">
+  <div [hidden]="data.password" class="password-message">
+    <p >
+      Both password input fields <br> must be the same!
+   </p>
+  </div>
+  <div [hidden]="data.name" class="name-message">
+    <p  >Invalid name inputs</p>
+  </div>
+  <div [hidden]="data.email" class="email-message">
+    <p  > Invalid email inputs</p>
+  </div>
+  <div [hidden]="!isInputValid()"class="valid-input">
+    <p>Valid Email. Please wait.</p>
+  </div>
+  <mat-spinner></mat-spinner>
+</div>
+

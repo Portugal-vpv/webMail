@@ -13,7 +13,8 @@ import { MatInputModule} from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav'
-
+import { MatDialogModule } from '@angular/material/dialog'
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import {MatSidenavModule} from '@angular/material/sidenav'
     MatMenuModule,
     MatIconModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDialogModule,
+
   ],
   exports: [
     CommonModule,
@@ -44,7 +47,8 @@ import {MatSidenavModule} from '@angular/material/sidenav'
     MatMenuModule,
     MatIconModule,
     MatCardModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatProgressSpinnerModule
   ]
 })
 export class MaterialModule { }

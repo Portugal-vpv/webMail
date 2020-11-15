@@ -1,3 +1,5 @@
+
+
 import { SideNavItensModule } from './components/side-nav-itens/side-nav-itens.module';
 import { SideNavBarModule } from './components/side-nav-bar/side-nav-bar.module';
 //import { RegisterModule } from './components/register/register.module';
@@ -19,6 +21,8 @@ import { MatInputModule} from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import { SideNavItensComponent } from './components/side-nav-itens/side-nav-itens.component';
+
+
 
 
 
@@ -46,7 +50,10 @@ import { SideNavItensComponent } from './components/side-nav-itens/side-nav-iten
     SideNavBarModule,
     SideNavItensModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MaterialModule,
+
+
 
 
 
