@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { RegisterModalComponent } from './../modals/register-modal/register-modal/register-modal.component';
 import { RegisterInterface } from './../../../interfaces/registerInterface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -15,7 +16,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   constructor(
     private formBuilder: FormBuilder,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private router: Router
     ) { }
 
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
@@ -105,8 +107,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.openModal();
 
 
+
   }
 
+  navigateToLoginPage() {
+    this.router.navigate(['login']);
+  }
   ngOnDestroy() {
     this._ngUnsubscribe$.next();
     this._ngUnsubscribe$.complete();

@@ -73,7 +73,7 @@
           </mat-form-field>
         </div>
         <div class="wrapper-2">
-          <button mat-button color="primary" class="mat-button">
+          <button mat-button color="primary" class="mat-button" (click)="navigateToRegistrationPage()">
             Create Account
           </button>
           <button
@@ -81,6 +81,7 @@
             color="primary"
             class="mat-button"
             type="submit"
+            (click)="onSubmit()"
           >
             Confirm Password
           </button>
